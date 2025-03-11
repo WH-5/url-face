@@ -12,7 +12,7 @@ const Create = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:8080/api/url', {
+      const response = await axios.post('http://whsite.asia:8080/api/url', {
         original_url: originalUrl ,
         custom_code: customCode || null,
         duration: null
