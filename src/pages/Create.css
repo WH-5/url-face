@@ -119,7 +119,8 @@ h1 {
 .copy-btn:active {
   transform: scale(0.95);
 }
-font-family: 'Inter', sans-serif;
+.btn {
+  font-family: 'Inter', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
