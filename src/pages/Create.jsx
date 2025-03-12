@@ -64,10 +64,13 @@ const Create = () => {
                 {shortUrl}
               </a>
               <button 
-                onClick={() => {
-                  navigator.clipboard.writeText(shortUrl)
-                    .then(() => alert('复制成功！'))
-                    .catch(() => alert('复制失败，请手动复制'));
+                onClick={async () => {
+                  try {
+                    await navigator.clipboard.writeText(shortUrl);
+                    alert('已成功复制到剪贴板！');
+                  } catch (err) {
+                    alert('无法自动复制，请手动选择并复制链接');
+                  }
                 }}
                 style={{padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer'}}
               >
