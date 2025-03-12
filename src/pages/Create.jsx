@@ -66,10 +66,24 @@ const Create = () => {
               <button 
                 onClick={async () => {
                   try {
+                    if (!navigator.clipboard) {
+                      throw new Error('浏览器不支持剪贴板API');
+                    }
                     await navigator.clipboard.writeText(shortUrl);
                     alert('已成功复制到剪贴板！');
                   } catch (err) {
-                    alert('无法自动复制，请手动选择并复制链接');
+                    console.error('复制失败:', err);
+                    const copyText = document.createElement('textarea');
+                    copyText.value = shortUrl;
+                    document.body.appendChild(copyText);
+                    copyText.select();
+                    try {
+                      document.execCommand('copy');
+                      alert('已手动复制到剪贴板！');
+                    } catch (manualErr) {
+                      alert('无法自动复制，请手动选择并复制链接');
+                    }
+                    document.body.removeChild(copyText);
                   }
                 }}
                 style={{padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer'}}
