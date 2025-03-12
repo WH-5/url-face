@@ -97,17 +97,29 @@ h1 {
   box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
 }
 
-.btn {
-  padding: 0.875rem;
+.copy-btn {
+  padding: 6px 12px;
   background-color: #3B82F6;
   color: white;
   border: none;
-  border-radius: 8px;
+  border-radius: 6px;
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
   transition: all 0.2s ease;
-  font-family: 'Inter', sans-serif;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.copy-btn:hover {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.copy-btn:active {
+  transform: scale(0.95);
+}
+font-family: 'Inter', sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
