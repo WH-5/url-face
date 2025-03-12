@@ -59,9 +59,21 @@ const Create = () => {
           {error ? (
             <div className="error">出错了！</div>
           ) : shortUrl ? (
-            <a href={shortUrl} target="_blank" rel="noopener noreferrer">
-              {shortUrl}
-            </a>
+            <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+              <a href={shortUrl} target="_blank" rel="noopener noreferrer">
+                {shortUrl}
+              </a>
+              <button 
+                onClick={() => {
+                  navigator.clipboard.writeText(shortUrl)
+                    .then(() => alert('复制成功！'))
+                    .catch(() => alert('复制失败，请手动复制'));
+                }}
+                style={{padding: '4px 8px', border: '1px solid #ccc', borderRadius: '4px', cursor: 'pointer'}}
+              >
+                复制
+              </button>
+            </div>
           ) : null}
         </div>
       </div>
