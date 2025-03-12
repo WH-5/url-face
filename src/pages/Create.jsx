@@ -18,7 +18,7 @@ const Create = () => {
         duration: null
       });
       if (response.data.code === 200) {
-        setShortUrl(response.data.short_url);
+        setShortUrl(response.data.short_url.startsWith('http') ? response.data.short_url : `http://${response.data.short_url}`);
         setError(false);
       } else {
         setError(true);
