@@ -51,6 +51,7 @@ const Create = () => {
                 value={customCode}
                 onChange={(e) => setCustomCode(e.target.value)}
                 className="input"
+                placeholder="optional"
               />
             </div>
             <button type="submit" className="btn">Save</button>

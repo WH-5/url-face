@@ -86,6 +86,9 @@ h1 {
   border-radius: 4px;
   font-size: 1rem;
   transition: border-color 0.2s ease;
+  .input::placeholder {
+    color: #999;
+  }
 }
 
 .input:focus {
